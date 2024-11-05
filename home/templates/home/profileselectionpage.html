@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Profile</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'home/profile-styles.css' %}">
+</head>
+<body>
+    <div class="profile-container">
+        <h1>Select the Profile</h1>
+        <div class="profiles">
+            <div class="profile">
+                <a href="{% url 'questionchoice' %}">  <!-- Link to the homepage -->
+                    <img src="{% static 'home/profile-erica.png' %}" alt="Erica Profile">
+                    <p>Erica</p>
+                </a>
+            </div>
+            <div class="profile">
+                <img src="{% static 'home/profile-dia.png' %}" alt="Dia Profile">
+                <p>Dia</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

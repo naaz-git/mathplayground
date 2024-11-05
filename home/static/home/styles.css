@@ -1,0 +1,109 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #86c3e0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    text-align: center;
+    padding: 50px;
+}
+
+.header h1 {
+    font-size: 3em;
+    color: #000;
+    margin: 0;
+}
+
+.header p {
+    font-size: 1.5em;
+    color: #000;
+}
+
+.illustration {
+    position: relative;
+    margin-top: 40px;
+}
+
+/* Image Styling */
+.math-image {
+    width: 300px; /* Adjust this to match the image size */
+    height: auto;
+}
+
+/* Circular elements */
+.circle {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #d35400;
+    color: white;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+/* Individual positions for circles */
+#circle1 {
+    top: 10px;
+    left: -50px;
+    background-color: #e67e22;
+}
+
+#circle2 {
+    top: -20px;
+    right: -30px;
+    background-color: #2ecc71;
+}
+
+#circle3 {
+    bottom: 20px;
+    left: -70px;
+    background-color: #e74c3c;
+}
+
+#circle4 {
+    bottom: -20px;
+    right: -50px;
+    background-color: #27ae60;
+}
+
+/* Buttons Styling */
+.buttons {
+    margin-top: 40px;
+}
+
+button {
+    background-color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    margin: 0 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #f1f1f1;
+}
+
+.login-btn {
+    color: #000;
+}
+
+.questions-btn {
+    color: #000;
+}
+
+/* Footer */
+footer {
+    margin-top: 50px;
+    font-size: 1em;
+    color: #000;
+}

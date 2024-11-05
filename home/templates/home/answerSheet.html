@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Answer Sheet</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'home/profile-styles.css' %}">
+</head>
+<body>
+    <div class="answer-sheet-container">
+        <h1>Answer Sheet</h1>
+        <div id="questions-answers-container"></div> <!-- Container for questions and answers -->
+    </div>
+
+    <script>
+        // Get the URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const questions = urlParams.get('questions').split(',');
+        const answers = urlParams.get('answers').split(',');
+
+        const container = document.getElementById('questions-answers-container');
+        questions.forEach((question, index) => {
+            container.innerHTML += `<div>${question} Answer: ${answers[index]}</div>`;
+        });
+    </script>
+</body>
+</html>

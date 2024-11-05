@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Home</title>
+    {% load static %}  <!-- Load static files -->
+    <link rel="stylesheet" href="{% static 'home/stylelogin.css' %}">  <!-- Link to your CSS file -->
+</head>
+<body>
+    <div style="text-align: center;">
+        <h1>Welcome to the Homepage</h1>
+        <p>You are logged in successfully!</p>
+
+        <!-- Include a static image -->
+        <img src="{% static 'home/numbers.png' %}" alt="Welcome Image" style="max-width: 100%; height: auto;">
+    </div>
+    </div>
+</body>
+</html>
