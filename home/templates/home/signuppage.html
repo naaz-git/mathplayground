@@ -22,8 +22,8 @@
             <form method="POST" action="{% url 'signup' %}">  <!-- POST method and URL for signup view -->
                 {% csrf_token %}  <!-- Include CSRF token for security -->
                 
-                <label for="parentName">Name of the Parent:</label>
-                <input type="text" id="parentName" name="parentName" placeholder="Enter parent's name" required><br>
+                <label for="parent_name">Name of the Parent:</label>
+                <input type="text" id="parent_name" name="parent_name" placeholder="Enter parent's name" required><br>
 
                 <label for="email">Email ID:</label>
                 <input type="email" id="email" name="email" placeholder="Enter email" required><br>
@@ -34,19 +34,29 @@
                 <label for="repassword">Re-enter Password:</label>
                 <input type="password" id="repassword" name="repassword" placeholder="Re-enter password" required><br>
 
-                <h3>No. of kids:</h3>
-                
-                <label for="kid1Name">Kid 1 Name:</label>
-                <input type="text" id="kid1Name" name="kid1Name" placeholder="Enter Kid 1's name"><br>
+                <!-- No. of Kids -->
+                <label for="num_of_kids">Number of Kids:</label>
+                <input type="number" id="num_of_kids" name="num_of_kids" placeholder="Enter number of kids" required><br>
 
-                <label for="kid1Age">Kid 1 Age:</label>
-                <input type="number" id="kid1Age" name="kid1Age" placeholder="Enter Kid 1's age"><br>
+                <!-- Kids Information (dynamic based on the number of kids) -->
+                <div id="kids-section">
+                    <div class="kid-info">
+                        <label for="kid1Name">Kid 1 Name:</label>
+                        <input type="text" id="kid1Name" name="kid1Name" placeholder="Enter Kid 1's name"><br>
 
-                <label for="kid2Name">Kid 2 Name:</label>
-                <input type="text" id="kid2Name" name="kid2Name" placeholder="Enter Kid 2's name"><br>
+                        <label for="kid1Age">Kid 1 Age:</label>
+                        <input type="number" id="kid1Age" name="kid1Age" placeholder="Enter Kid 1's age"><br>
+                    </div>
 
-                <label for="kid2Age">Kid 2 Age:</label>
-                <input type="number" id="kid2Age" name="kid2Age" placeholder="Enter Kid 2's age"><br>
+                    <!-- For 2 kids as an example -->
+                    <div class="kid-info">
+                        <label for="kid2Name">Kid 2 Name:</label>
+                        <input type="text" id="kid2Name" name="kid2Name" placeholder="Enter Kid 2's name"><br>
+
+                        <label for="kid2Age">Kid 2 Age:</label>
+                        <input type="number" id="kid2Age" name="kid2Age" placeholder="Enter Kid 2's age"><br>
+                    </div>
+                </div>
 
                 <!-- Sign Up button -->
                 <button type="submit" class="signup-btn">Sign Up</button>

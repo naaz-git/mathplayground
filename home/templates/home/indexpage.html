@@ -6,9 +6,84 @@
     <title>Math Playground</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'home/styles.css' %}">
+    <style>
+        /* Fullscreen video background */
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; /* Keeps video in the background */
+        }
+
+        /* Wrapper for content */
+        .container {
+            position: relative; /* Ensures content layers above the video */
+            z-index: 1; /* Stacks above the video */
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Style adjustments for readability */
+        .header h1, .header p {
+            color: white;
+            background-color: rgba(0, 0, 0, 0.7); /* Darker background for better contrast */
+            display: inline-block;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 36px;
+        }
+
+        /* Buttons styling */
+        .buttons a, .buttons button {
+            margin: 15px;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: #000; /* Black background for both buttons */
+            color: white; /* White text */
+        }
+
+        /* Add hover effect to buttons */
+        .buttons a:hover, .buttons button:hover {
+            transform: scale(1.1); /* Slightly increase size on hover */
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7); /* More prominent shadow */
+        }
+
+        .illustration {
+            position: relative;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .circle {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.8);
+            color: black;
+            border-radius: 50%;
+            padding: 5px 10px;
+            text-align: center;
+        }
+
+        #circle1 { top: 10%; left: 10%; }
+        #circle2 { top: 20%; left: 30%; }
+        #circle3 { top: 50%; left: 60%; }
+        #circle4 { top: 70%; left: 80%; }
+    </style>
 </head>
 <body>
+    <!-- Video Background -->
+    <video autoplay muted loop class="background-video">
+        <source src="{% static 'home/background.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
+    <!-- Main Content -->
     <div class="container">
         <div class="header">
             <h1>Math Playground</h1>
@@ -23,12 +98,11 @@
             <div class="circle" id="circle3">12</div>
             <div class="circle" id="circle4">8</div>
         </div>
+        
         <div class="buttons">
             <a href="{% url 'login' %}" class="login-btn">Parent Login</a>
             <button class="questions-btn">Questions for the day!</button>
         </div>
-
     </div>
-    
 </body>
 </html>

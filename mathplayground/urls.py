@@ -27,5 +27,5 @@ urlpatterns = [
     path('login/', login_view, name='login'),  # Login page (add a distinct path for login)
     path('loginsuccess/', loginsuccess_view, name="loginsuccess"),  # loginsuccess
     path('questionchoice/', questionchoice_view, name="questionchoice"),  # loginsuccess
-
+    path('answerSheet/', answer_sheet_view, name='answerSheet'),  # New view for answer sheet
 ]

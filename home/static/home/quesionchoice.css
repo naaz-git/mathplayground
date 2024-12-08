@@ -1,36 +1,78 @@
+/* Fullscreen video background */
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure video covers the screen while preserving aspect ratio */
+    z-index: -1; /* Place behind all content */
+}
+
+/* Ensure the content is visible over the video */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-}
-
-.options-container {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-h1 {
     text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff; /* Fallback for unsupported browsers */
+    color: white; /* Change text color for readability over video */
+    position: relative; /* Required to position child elements properly */
+}
+/* Wrapper for the entire content */
+.page-wrapper {
+    position: relative; /* Keeps content above video */
+    z-index: 1; /* Content stays above the video */
+    padding: 20px;
+}
+/* Add background to text for better readability */
+h1, h2 {
+    color: white; /* Update text color */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 10px;
+    display: inline-block;
+    border-radius: 5px;
 }
 
-.option {
+.question-section {
     margin: 10px 0;
+    background-color: rgba(255, 255, 255, 0.7); /* Light background for better visibility */
+    border-radius: 5px;
+    padding: 10px;
 }
 
 button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #28a745;
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: rgba(0, 123, 255, 0.8);
     color: white;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: rgba(0, 123, 255, 1);
+}
+
+@media print {
+    body {
+        margin: 0;
+        padding: 20px;
+        font-size: 16px;
+    }
+
+    button {
+        display: none; /* Hide buttons */
+    }
+
+    .row {
+        break-inside: avoid; /* Prevent rows from splitting across pages */
+    }
+
+    .answer {
+        font-weight: bold;
+        color: black;
+    }
 }
